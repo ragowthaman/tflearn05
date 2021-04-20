@@ -26,3 +26,14 @@ resource "aws_dynamodb_table" "tfc_example_table" {
     type = "S"
   }
 }
+
+
+resource "aws_vpc" "tf_vpc01" {
+  cidr_block = "10.0.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name: "tf-vpc01"
+    "project": "tf-learn03"
+  } 
+}
